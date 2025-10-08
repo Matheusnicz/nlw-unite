@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+    <script>
+      dayjs.extend(window.dayjs_plugin_relativeTime);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
+    <script>
+      dayjs.locale("pt-br");
+    </script>
+
+    <script type="text/javascript" src="./index.js" defer=""></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="32px" height="32px">
+          <rect width="256" height="256" fill="none"></rect>
+          <line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></line>
+          <line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></line>
+        </svg>
+      </header>
+
+      <form onsubmit="adicionarParticipante(event)">
+        <fieldset>
+          <legend>Inscrição</legend>
+          <div>
+            <div class="input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round-icon lucide-circle-user-round">
+                <path d="M18 20a6 6 0 0 0-12 0"></path>
+                <circle cx="12" cy="10" r="4"></circle>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              <input type="text" placeholder="Nome Completo" name="nome" required="">
+            </div>
+
+            <div class="input-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-at-sign-icon lucide-at-sign">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path>
+              </svg>
+              <input type="email" placeholder="Email" name="email" required="">
+            </div>
+
+            <button>REALIZAR INSCRIÇÃO</button>
+          </div>
+        </fieldset>
+      </form>
+
+      <section class="lista-participantes">
+        <h2>Participantes</h2>
+
+        <div>
+          <table width="100%">
+            <thead style="text-align: left">
+              <tr>
+                <th>Participante</th>
+                <th>Data da inscrição</th>
+                <th>Data do check-in</th>
+              </tr>
+            </thead>
+
+            <tbody></tbody>
+          </table>
+        </div>
+
+      </section>
+    </div>
+
+  </body>
+
+</html>
